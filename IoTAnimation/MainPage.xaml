@@ -1,0 +1,52 @@
+﻿<Page
+    x:Class="IoTAnimation.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:IoTAnimation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <!-- Main Container -->
+    <Grid Name="Grd_Main" Background="Pink">
+        <!-- Grid row definations -->
+        <Grid.RowDefinitions>
+            <!-- If you don't specify height, by-default it is *(Star) -->
+            <RowDefinition/>
+            <RowDefinition Height="150"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Grid column definations -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Row 0 : Col 0 : ColumnSpan 3 -->
+        <!-- Image will be placed in grid's row 0 and having col-span of 3 -->
+        <Image Name="Img_RaspberryPi" Grid.Row="0" Grid.ColumnSpan="3" Margin="50" MaxHeight="600" MaxWidth="475" Source="Assets/Raspberry_Pi_Logo.svg.png" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+            <Image.Projection>
+                <PlaneProjection x:Name="Img_RaspberryPi_PlaneProjection" RotationX="0" RotationY="0" RotationZ="0"/>
+            </Image.Projection>
+            <Image.RenderTransform>
+                <CompositeTransform x:Name="Img_RaspberryPi_CompositeTransform" Rotation="0"/>
+            </Image.RenderTransform>
+        </Image>
+
+        <!-- Row 1 : Col 0 -->
+        <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Name="Btn_FadeImage" Margin="10" Height="50" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Btn_FadeImage_Click">Fade</Button>
+            <Button Name="Btn_ColorizeImage" Margin="10" Height="50" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Btn_ColorizeImage_Click">Colorize</Button>
+        </StackPanel>
+
+        <!-- Row 1 : Col 1 -->
+        <Button Grid.Row="1" Grid.Column="1" Name="Btn_RotateImage" Height="50" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Btn_RotateImage_Click">Rotate</Button>
+
+        <!-- Row 1 : Col 2 -->
+        <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Name="Btn_ProjectionX" Margin="5" Height="50" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Btn_ProjectionX_Click">Projection X</Button>
+            <Button Name="Btn_ProjectionY" Margin="5" Height="50" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Btn_ProjectionY_Click">Projection Y</Button>
+            <Button Name="Btn_ProjectionZ" Margin="5" Height="50" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Btn_ProjectionZ_Click">Projection Z</Button>
+        </StackPanel>
+    </Grid>
+</Page>
